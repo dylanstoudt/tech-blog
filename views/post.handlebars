@@ -1,14 +1,15 @@
 <div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
+  <h1>{{title}}</h1>
+  <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+  <form id="create-comment" data-id="{{id}}">
+    <div>
+      <label for="comment-content">Comment:</label>
+      <input type="text" name="comment-content" id="comment-content">
+    </div>
+    <button class="btn btn-primary" type="submit">Leave a comment!</button>
+  </form>
+  <p>{{comment}}</p>
 </div>
+
+<script src="/js/create-comment.js"></script>

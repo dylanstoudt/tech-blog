@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// default route "/"
+
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -68,6 +70,13 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/dashboard', withAuth,  async(req, res) => {
+  try {
+  } catch (error) {
+    
+  }
+})
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
