@@ -23,4 +23,4 @@ const newCommentHandler = async (event) => {
 
 document
 .querySelector('#create-comment')
-.addEventListener('submit')
+.addEventListener('submit', newCommentHandler)

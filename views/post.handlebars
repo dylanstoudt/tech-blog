@@ -9,7 +9,10 @@
     </div>
     <button class="btn btn-primary" type="submit">Leave a comment!</button>
   </form>
-  <p>{{comment}}</p>
+  {{#each comments as |comment|}}
+  <p>Comment: {{comment.content}}</p>
+  <p>Left by: {{comment.user.name}}</p>
+  {{/each}}
 </div>
 
 <script src="/js/create-comment.js"></script>
